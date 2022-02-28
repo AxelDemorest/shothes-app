@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shothes - Accueil{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <div class="banner_header">
+            <img src="{{ asset('build/images/banner_header.jpg') }}" alt="" class="banner_img">
+        </div>
+        <div class="popular_categories">
+            <h2>Les catégories populaires</h2>
+            <div class="list_popular_categories">
+                <div class="single_category">
+                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
+                    <h3>Catégorie 1</h3>
+                </div>
+                <div class="single_category">
+                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
+                    <h3>Catégorie 2</h3>
+                </div>
+                <div class="single_category">
+                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
+                    <h3>Catégorie 3</h3>
+                </div>
+                <div class="single_category">
+                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
+                    <h3>Catégorie 4</h3>
+                </div>
+                <div class="single_category">
+                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
+                    <h3>Catégorie 5</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

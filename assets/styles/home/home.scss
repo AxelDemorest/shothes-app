@@ -1,0 +1,39 @@
+.home {
+  .banner_img {
+    object-fit: cover;
+    width: 100%;
+    height: 30em;
+  }
+
+  .popular_categories {
+    padding: 40px;
+  }
+
+  .popular_categories h2 {
+    margin-bottom: 30px;
+  }
+
+  .list_popular_categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .single_category {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    width: 18%;
+  }
+
+  .single_category h3 {
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  .single_category img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+}
