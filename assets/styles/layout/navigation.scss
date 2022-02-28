@@ -1,0 +1,33 @@
+.navigation {
+  .navigation_head {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .navigation_logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation_list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation_menu {
+    padding: 30px;
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .navigation_menu li {
+    display: inline-block;
+    font-size: 19px;
+  }
+
+  .navigation_menu a:hover {
+    text-decoration: underline;
+  }
+}
