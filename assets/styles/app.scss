@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
-html, button, textarea {
-    font-family: "Maison Neue", "Helvetica Neue", "Arial", sans-serif;
+body, button, textarea {
+    font-family: 'Verdana', sans-serif !important;
+}
+
+h1, h2, h3, h4 {
+    font-family: '.AppleSystemUIFont', sans-serif;
+    font-weight: 600 !important;
 }
 
 ul, li {
