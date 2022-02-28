@@ -13,14 +13,16 @@ ul, li {
 }
 
 a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none !important;
+    color: black !important;
 }
 
 button, input {
     outline: none;
     border: none;
 }
+
+@import "~bootstrap/scss/bootstrap";
 
 // Importation des fichiers scss
 @import "home/home.scss";
