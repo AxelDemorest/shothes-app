@@ -8,9 +8,8 @@ body, button, textarea {
     font-family: 'Verdana', sans-serif !important;
 }
 
-h1, h2, h3, h4 {
-    font-family: '.AppleSystemUIFont', sans-serif;
-    font-weight: 600 !important;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif !important;
 }
 
 ul, li {
@@ -33,4 +32,6 @@ button, input {
 @import "home/home.scss";
 @import "layout/navigation.scss";
 @import "catalog/catalog";
+@import "security/login";
+@import "security/registration";
 @import "catalog/product";

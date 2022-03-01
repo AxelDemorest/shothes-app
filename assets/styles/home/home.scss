@@ -10,7 +10,7 @@
   }
 
   .popular_categories h2 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .list_popular_categories {
@@ -27,13 +27,111 @@
     width: 18%;
   }
 
-  .single_category h3 {
-    padding: 25px 15px;
+  .single_category h4 {
+    padding: 15px;
+    margin-bottom: 0;
     text-align: center;
   }
 
   .single_category img {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+  }
+
+  .shop_container {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E7E5D9;
+    margin: 20px auto 50px auto;
+  }
+
+  .left_column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+
+  .left_column h3 {
+    font-family: 'Verdana', sans-serif !important;
+  }
+
+  .left_column p {
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .left_column button {
+    border: 2px solid black;
+    padding: 11px;
+    background: none;
+    font-size: 13px;
+  }
+
+  .right_column {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  .list_icons_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .list_icons_container div {
+    width: 40%;
+    padding: 30px;
+    border-right: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+
+    img {
+      margin-bottom: 15px;
+    }
+  }
+
+  footer {
+    width: 100%;
+    background-color: #EBEBEB;
+  }
+
+  footer ul {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin-bottom: 5px;
+  }
+
+  footer a {
+    font-weight: lighter;
+    font-size: 14px;
+  }
+
+  footer a:hover {
+    text-decoration: underline !important;
+  }
+
+  .list_footer_title {
+    font-weight: 600;
+  }
+
+  .row_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
   }
 }
