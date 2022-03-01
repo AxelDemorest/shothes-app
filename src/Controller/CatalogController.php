@@ -15,4 +15,12 @@ class CatalogController extends AbstractController
             'controller_name' => 'CatalogController',
         ]);
     }
+
+    #[Route('/product', name: 'app_product')]
+    public function showProduct(): Response
+    {
+        return $this->render('catalog/product.html.twig', [
+            'controller_name' => 'CatalogController',
+        ]);
+    }
 }

@@ -1,4 +1,40 @@
 .catalog {
 
 
+  .banner_img {
+    object-fit: cover;
+    width: 100%;
+    height: 30em;
+  }
+
+  .title_catalog {
+    padding: 40px !important;
+  }
+
+
+  .catalogCard{
+    display: flex;
+    flex-wrap:wrap;
+    margin-left: 1% !important;
+
+  }
+
+  .card {
+    margin-left: 2% !important;
+    background-color: #f6f6f6 !important;
+   // border: none !important;
+  }
+
+  .img-fluid {
+    min-height: 270px !important;
+    min-width: 200px !important;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding-left: 6em !important;
+    padding-top: 4em !important;
+
+  }
+
 }
