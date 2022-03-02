@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
-html, button, textarea {
-    font-family: "Maison Neue", "Helvetica Neue", "Arial", sans-serif;
+body, button, textarea {
+    font-family: 'Verdana', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif !important;
 }
 
 ul, li {
@@ -30,3 +34,7 @@ button, input {
 @import "catalog/catalog";
 @import "about/about";
 @import "account/account";
+@import "security/login";
+@import "security/registration";
+@import "catalog/product";
+
