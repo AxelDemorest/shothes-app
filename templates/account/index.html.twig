@@ -4,6 +4,11 @@
 
 {% block body %}
     <div class="account">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="container h-0 py-5 m-0">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="m-0">
@@ -14,7 +19,7 @@
                                 <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">Modifier le profil</button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5>Axel Demorest</h5>
+                                <h5>{{ user.pseudo }}</h5>
                                 <p>Montcuq</p>
                             </div>
                         </div>
@@ -34,6 +39,7 @@
                                 </div>
                             </div>
                         </div>
+                        <button>Créer ma boutique</button>
                         <div class="card-body p-4 text-black">
                             <div class="mb-5">
                                 <p class="lead fw-normal mb-1">Description</p>
