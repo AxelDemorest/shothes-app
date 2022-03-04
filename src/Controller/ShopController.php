@@ -28,8 +28,6 @@ class ShopController extends AbstractController
         /** @var $user User */
         $user = $this->getUser();
 
-        if($user->)
-
         $shop = new Shop();
         $form = $this->createForm(ShopType::class, $shop);
         $form->handleRequest($request);
