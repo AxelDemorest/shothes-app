@@ -5,6 +5,23 @@
     display: flex;
     justify-content: center;
     border-bottom: 1px solid lightgray;
+    position: relative;
+  }
+
+  .list_buttons_head {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .list_buttons_head button {
+    background-color: black;
+    padding: 5px 13px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 5px;
+    color: white;
+    margin: 0 3px;
   }
 
   .navigation_logo {
