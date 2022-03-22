@@ -3,7 +3,117 @@
 {% block title %}Hello CatalogController!{% endblock %}
 
 {% block body %}
-    <div class="product" >
-
+    <div class="product">
+        <div class="list_images_product">
+                <div class="container">
+                    <div class="carousel">
+                        <input type="radio" name="slides" checked="checked" id="slide-1">
+                        <input type="radio" name="slides" id="slide-2">
+                        <input type="radio" name="slides" id="slide-3">
+                        <input type="radio" name="slides" id="slide-4">
+                        <input type="radio" name="slides" id="slide-5">
+                        <input type="radio" name="slides" id="slide-6">
+                        <ul class="carousel__slides">
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <!-- width="60%" -->
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img class="image_product_carousel" src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+                        <ul class="carousel__thumbnails">
+                            <li>
+                                <label for="slide-1"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-2"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-3"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-4"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-5"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-6"><img src="{{ asset('build/images/dunk_low.jpeg') }}" alt=""></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="product_information">
+            <div class="card_product-information">
+                <h2>MISS DIOR ROSE N'ROSES</h2>
+                <p class="product_category">Eau de toilette</p>
+                <hr>
+                <button class="buy_button">Commander</button>
+                <div class="accordion_container">
+                    <button class="accordion">Description</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <table class="table_feature">
+                    <tbody>
+                    <tr>
+                        <td class="feature_title">Date de mise en vente</td>
+                        <td>12 Février 2022</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">Marque</td>
+                        <td>Nike</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">Taille</td>
+                        <td>XS</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">État</td>
+                        <td>Neuf avec étiquette</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 {% endblock %}

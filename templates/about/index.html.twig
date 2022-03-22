@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos{% endblock %}
+
+{% block body %}
+<div class="about">
+    <div class="banner_header">
+        <img src="{{ asset("build/images/aboutH.jpg") }}" class="banner_img" alt="" >
+    </div>
+
+
+    <div class=" d-flex align-items-center justify-content-around flex-direction-row">
+        <div class="card border-0 col-md-4 d-flex justify-content-center align-items-center">
+            <div>
+            <img src="{{ asset("build/images/certificat.png") }}" alt="" class="card-img-top">
+            </div>
+            <div class="card-title">
+                <p class="text-decoration-underline">Authenticité vérifiée à 100%</p>
+            </div>
+            <div class="card-text">
+                <p class="text-center">Chaque article vendu passe par notre processus de vérification exclusif en plusieurs étapes avec notre équipe d’authentificateurs experts.</p>
+            </div>
+        </div>
+
+        <div class="card border-0 col-md-4 d-flex justify-content-center align-items-center">
+            <div>
+            <img src="{{ asset("build/images/protection.png") }}" alt="" class="card-img-top">
+            </div>
+            <div class="card-title">
+                <p class="text-decoration-underline">Authenticité vérifiée à 100%</p>
+            </div>
+            <div class="card-text">
+                <p class="text-center">Préserver l’intégrité de notre plateforme signifie garder une longueur d’avance. Nos systèmes de sécurité et de lutte contre la fraude, mis en place par nos partenaires de renommée mondiale, assurent la protection de vos informations personnelles 24 heures sur 24, 7 jours sur 7.</p>
+            </div>
+        </div>
+
+        <div class="card border-0 col-md-4 d-flex justify-content-center align-items-center">
+            <div>
+                <img src="{{ asset("build/images/don.png") }}" alt="" class="card-img-top">
+            </div>
+            <div class="card-title">
+                <p class="text-decoration-underline">Authenticité vérifiée à 100%</p>
+            </div>
+            <div class="card-text">
+                <p class="text-center">Notre plateforme en temps réel fonctionne comme la Bourse – vous permettant d’acheter et de vendre les objets les plus convoités à leur juste prix.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

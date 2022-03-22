@@ -22,20 +22,29 @@
                 <div class="navigation_logo">
                     <img src="{{ asset("build/images/logo.png") }}" alt="" width="25%">
                 </div>
+                <div class="list_buttons_head">
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <a href="{{ path('app_account') }}"><button>Profil</button></a>
+                        <a href="{{ path('app_logout') }}"><button>Déconnexion</button></a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}"><button>Se connecter</button></a>
+                        <a href="{{ path('app_register') }}"><button>S'inscrire</button></a>
+                    {% endif %}
+                </div>
             </div>
             <div class="navigation_list">
                 <ul class="navigation_menu">
                     <li>
-                        <a href="" class="nav_link">Accueil</a>
+                        <a href="{{ path('app_home') }}" class="nav_link">Accueil</a>
                     </li>
                     <li>
-                        <a href="" class="nav_link">Catégories</a>
+                        <a href="{{ path('app_home') }}" class="nav_link">Catégories</a>
                     </li>
                     <li>
-                        <a href="" class="nav_link">Produits</a>
+                        <a href="{{ path('app_catalog') }}" class="nav_link">Produits</a>
                     </li>
                     <li>
-                        <a href="" class="nav_link">À propos</a>
+                        <a href="{{ path('app_about') }}" class="nav_link">À propos</a>
                     </li>
                 </ul>
             </div>
