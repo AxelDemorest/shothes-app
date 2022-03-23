@@ -1,0 +1,12 @@
+{% extends 'user_dashboard/index.html.twig' %}
+
+{% block content %}
+    <div class="container-bloc-dashboard w-50">
+        <div class="container-bloc-dashboard-head">
+            <h5 class="m-0">Nouveau produit</h5>
+        </div>
+        <div class="p-3 content-form-dashboard">
+            {{ include('user_dashboard/product/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

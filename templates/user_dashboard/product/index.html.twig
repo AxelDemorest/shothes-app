@@ -1,0 +1,42 @@
+{% extends 'user_dashboard/index.html.twig' %}
+
+{% block content %}
+    <div class="container-bloc-dashboard">
+        <div class="container-bloc-dashboard-head w-100">
+            <h5 class="m-0">Liste des produits</h5>
+        </div>
+        <div class="table-content py-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product_title</th>
+                    <th>Product_price</th>
+                    <th>Product_description</th>
+                    <th>Product_created_at</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.productTitle }}</td>
+                        <td>{{ product.productPrice }}</td>
+                        <td>{{ product.productDescription }}</td>
+                        <td>{{ product.productCreatedAt ? product.productCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td class="d-flex align-items-center">
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}" target=”_blank”><button class="action-button">Afficher</button></a>
+                            <a href="{{ path('app_user_dashboard_product_edit', {'id': product.id}) }}"><button class="action-button">Éditer</button></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
