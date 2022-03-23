@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shop Dashboard{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-row">
+        <nav class="sidebar-navigation">
+            <div class="navigation-head d-flex flex-column align-items-center pt-4">
+                <img class="avatar-img" src="{{ asset('build/images/avatar.jpeg') }}" alt="" width="30%">
+                <p class="pseudo-user">{{ app.user.pseudo }}</p>
+            </div>
+            <div class="navigation-body d-flex flex-column">
+                <ul>
+                    <li class="d-flex flex-column">
+                        <p>Votre boutique</p>
+                        <a href="{{ path('app_user_dashboard_shop_edit', {'id': app.user.shop.id }) }}">Modifier votre boutique</a>
+                    </li>
+                    <li class="d-flex flex-column mt-3">
+                        <p>Produits</p>
+                        <a href="{{ path('app_user_dashboard_product_index') }}">Liste des produits</a>
+                        <a href="{{ path('app_user_dashboard_product_new') }}">Créer un produit</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content-shop-dashboard">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
