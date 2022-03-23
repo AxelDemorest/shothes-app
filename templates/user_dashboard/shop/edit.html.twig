@@ -1,0 +1,14 @@
+{% extends 'user_dashboard/index.html.twig' %}
+
+{% block content %}
+    <div class="container-bloc-dashboard w-50">
+        <div class="container-bloc-dashboard-head">
+            <h5 class="m-0">Modifier la boutique</h5>
+        </div>
+        <div class="p-3 content-form-dashboard">
+            {{ include('shop/_form_edit.html.twig', {'button_label': 'Enregistrer'}) }}
+
+            {{ include('user_dashboard/shop/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

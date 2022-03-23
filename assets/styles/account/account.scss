@@ -1,5 +1,147 @@
-.account{
-  .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-    max-width: 100% !important;
+.account {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 50px;
+
+  .list-buttons-actions {
+    font-family: 'Montserrat', sans-serif;
+    width: 81.5%;
+    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    margin-bottom: 20px;
   }
+
+  .action-button {
+    background-color: black;
+    color: white !important;
+    padding: 7px 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 15px;
+    margin-right: 20px;
+   }
+
+  .action-button:hover {
+    background-color: #FFFFFF;
+    color: #000000 !important;
+  }
+
+  .account-avatar {
+    font-family: 'Montserrat', sans-serif;
+    width: 20%;
+    margin-right: 20px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+
+    p {
+      margin: 0;
+      line-height: 2;
+    }
+
+    .avatar-img {
+      margin-bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid black;
+    }
+
+    .account-name {
+      font-weight: 700;
+    }
+
+  }
+
+  .header-container {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 20px;
+    background-color: black;
+    width: 100%;
+  }
+
+  .account-information {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+    .title-information {
+      font-weight: 700;
+    }
+
+    .table-information {
+      width: 100%;
+    }
+  }
+
+  .list-account-products {
+    width: 81.5%;
+    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    margin: 20px 0;
+  }
+
+  .title-list_products {
+     font-weight: 700;
+   }
+
+  .list-products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .single-product {
+    margin: 0 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: rgb(85, 85, 85);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .image-product {
+    height: 325px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .name-product {
+    padding-top: 10px;
+  }
+
+  .read-more-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 5px 15px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 5px;
+    border: 2px solid #000000;
+    transition: background-color .2s linear, color .2s linear;
+  }
+
+  .read-more-button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+
+
+  // code merwan
+
+  /* .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    max-width: 100% !important;
+  } */
 }

@@ -32,6 +32,13 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private $product_category;
 
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $product_author;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $product_images;
+
     public function __construct()
     {
         $this->product_created_at = new \DateTimeImmutable();
@@ -112,5 +119,34 @@ class Product
         $this->product_category = $product_category;
 
         return $this;
+    }
+
+    public function getProductAuthor(): ?User
+    {
+        return $this->product_author;
+    }
+
+    public function setProductAuthor(?User $product_author): self
+    {
+        $this->product_author = $product_author;
+
+        return $this;
+    }
+
+    public function getProductImages(): ?string
+    {
+        return $this->product_images;
+    }
+
+    public function setProductImages(string $product_images): self
+    {
+        $this->product_images = $product_images;
+
+        return $this;
+    }
+
+    public function getImagePath(): string
+    {
+        return 'uploads/product_image/'.$this->getProductImages();
     }
 }

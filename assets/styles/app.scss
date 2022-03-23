@@ -17,9 +17,22 @@ a {
     color: black !important;
 }
 
-button, input {
+button, input, textarea, select {
     outline: none;
     border: none;
+}
+
+.input-custom {
+    color: #7a7a7a;
+    background-color: #EDEDED;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content-form-dashboard {
+    font-family: 'Montserrat', sans-serif;
 }
 
 @import "~bootstrap/scss/bootstrap";
@@ -33,4 +46,8 @@ button, input {
 @import "security/login";
 @import "security/registration";
 @import "catalog/product";
+@import "shop/new-shop";
+@import "user_dashboard/sidebar";
+@import "user_dashboard/product/list-products";
+@import "user_dashboard/shop/edit-shop";
 @import "categories/categories";

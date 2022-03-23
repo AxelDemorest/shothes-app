@@ -3,9 +3,19 @@
 {% block title %}New Shop{% endblock %}
 
 {% block body %}
-    <h1>Create new Shop</h1>
-
-    {{ include('shop/_form.html.twig') }}
-
-    <a href="{{ path('app_shop_index') }}">back to list</a>
+    <div class="new-shop">
+        <div class="new-shop-header">
+            <h2 class="header-title">nouvelle boutique</h2>
+        </div>
+        <div class="w-100 d-flex flex-row justify-content-center py-5">
+            <div class="form-new-shop w-50 d-flex flex-column justify-content-center align-items-center">
+                <h3 class="form-title">Crée ta boutique personnalisable</h3>
+                {{ include('shop/_form_new.html.twig') }}
+                <a class="form-button text-white" href="{{ path('app_account') }}">Annuler</a>
+            </div>
+            <div class="draw-shop w-50 d-flex justify-content-center align-items-center">
+                <img src="{{ asset("build/images/image_new_shop.jpeg") }}" alt="" width="80%">
+            </div>
+        </div>
+    </div>
 {% endblock %}

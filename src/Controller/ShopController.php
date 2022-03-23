@@ -54,35 +54,8 @@ class ShopController extends AbstractController
     #[Route('/{id}', name: 'app_shop_show', methods: ['GET'])]
     public function show(Shop $shop): Response
     {
-        return $this->render('shop/show.html.twig', [
+        return $this->render('shop/product.html.twig', [
             'shop' => $shop,
         ]);
-    }
-
-    #[Route('/{id}/edit', name: 'app_shop_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Shop $shop, ShopRepository $shopRepository): Response
-    {
-        $form = $this->createForm(ShopType::class, $shop);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $shopRepository->add($shop);
-            return $this->redirectToRoute('app_shop_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('shop/edit.html.twig', [
-            'shop' => $shop,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'app_shop_delete', methods: ['POST'])]
-    public function delete(Request $request, Shop $shop, ShopRepository $shopRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$shop->getId(), $request->request->get('_token'))) {
-            $shopRepository->remove($shop);
-        }
-
-        return $this->redirectToRoute('app_shop_index', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -1,0 +1,42 @@
+.new-shop {
+  .new-shop-header {
+    background: center/cover url('../../../public/build/images/header/banner_4.jpg');
+    height: 200px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 70px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .form-new-shop {
+    border-right: 1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .form-title {
+    font-weight: 600;
+  }
+
+  .form-button {
+    background-color: black;
+    color: #FFFFFF;
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+  }
+
+  .form-button:hover {
+    background-color: #FFFFFF;
+    color: #000000 !important;
+  }
+}
