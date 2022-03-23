@@ -1,0 +1,8 @@
+{{ form_start(form, {'attr': {'class': 'w-100'}}) }}
+    {{ form_label(form.shop_name, 'Nom de votre boutique') }}
+    <div class="mt-2">
+        {{ form_errors(form.shop_name) }}
+        {{ form_widget(form.shop_name) }}
+    </div>
+<button class="action-button">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

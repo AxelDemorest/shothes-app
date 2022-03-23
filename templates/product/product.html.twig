@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CatalogController!{% endblock %}
+
+{% block body %}
+    <div class="product">
+        <div class="list_images_product">
+                <div class="container">
+                    <div class="carousel">
+                        <input type="radio" name="slides" checked="checked" id="slide-1">
+                        <!-- <input type="radio" name="slides" id="slide-2"> -->
+                        <ul class="carousel__slides">
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <!-- width="60%" -->
+                                        <img class="image_product_carousel" src="{{ asset(product.imagePath) }}" alt="">
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+                        <ul class="carousel__thumbnails">
+                            <li>
+                                <label for="slide-1"><img src="{{ asset(product.imagePath) }}" alt=""></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="product_information">
+            <div class="card_product-information">
+                <h2>{{ product.productTitle }}</h2>
+                <p class="product_category">{{ product.productCategory.categoryName }}</p>
+                <hr>
+                <button class="buy_button">Commander</button>
+                <div class="accordion_container">
+                    <button class="accordion">Description</button>
+                    <div class="panel">
+                        <p>{{ product.productDescription }}</p>
+                    </div>
+                </div>
+                <table class="table_feature">
+                    <tbody>
+                    <tr>
+                        <td class="feature_title">Date de mise en vente</td>
+                        <td>12 Février 2022</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">Marque</td>
+                        <td>Nike</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">Taille</td>
+                        <td>XS</td>
+                    </tr>
+                    <tr>
+                        <td class="feature_title">État</td>
+                        <td>Neuf avec étiquette</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

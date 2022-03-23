@@ -1,0 +1,4 @@
+<form class="mt-2" method="post" action="{{ path('app_user_dashboard_shop_delete', {'id': shop.id}) }}" onsubmit="return confirm('Êtes-vous bien certains de vouloir supprimer votre boutique ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ shop.id) }}">
+    <button class="delete-button">Supprimer</button>
+</form>

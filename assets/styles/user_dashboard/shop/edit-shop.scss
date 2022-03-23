@@ -1,0 +1,18 @@
+
+
+.delete-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  padding: 5px 15px;
+  background-color: #C64141;
+  margin-right: 10px;
+  color: #FFFFFF;
+  border-radius: 10px;
+  border: 2px solid #C64141;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.delete-button:hover {
+  color: #C64141;
+  background-color: #FFFFFF;
+}

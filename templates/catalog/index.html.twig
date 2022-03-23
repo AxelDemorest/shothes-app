@@ -4,12 +4,22 @@
 
 {% block body %}
     <div class="catalog">
-        <img src="{{ asset("build/images/banner_header.jpg") }}" class="banner_img">
-        <div class="title_catalog">
-            <h2>Liste des produits</h2>
+        <div class="catalog-header">
+            <h2 class="header-title">Notre catalogue</h2>
+        </div>
+        <div class="list-products">
+            {% for product in products %}
+            <div class="single-product">
+                <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                <p class="name-product">{{ product.productTitle }}</p>
+                <p class="price-product">{{ product.productPrice }}$</p>
+                <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+            </div>
+            {% endfor %}
         </div>
 
-        <div class="catalogCard">
+
+        <!--<div class="catalogCard">
             <div class="card mb-3" style="max-width: 430px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -58,9 +68,6 @@
                 </div>
             </div>
 
-        </div>
-
-
-
+        </div>-->
     </div>
 {% endblock %}

@@ -1,0 +1,43 @@
+.container-bloc-dashboard-head {
+  background-color: #F7F7F7;
+  padding: 15px;
+}
+
+.container-bloc-dashboard-head h5 {
+  color: #363a3b;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.container-bloc-dashboard {
+  border: 1px solid #F2F2F2;
+  border-radius: 10px;
+
+  .table-content table {
+    border-collapse: unset;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .table-content th {
+    font-weight: normal;
+  }
+}
+
+.action-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  padding: 5px 15px;
+  background-color: #000000;
+  margin-right: 10px;
+  color: #FFFFFF;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.action-button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}

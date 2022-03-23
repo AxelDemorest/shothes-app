@@ -1,0 +1,7 @@
+{{ form_start(form, {'attr': {'class': 'w-100 d-flex flex-column justify-content-center align-items-center py-4'}}) }}
+    <div class="w-50 mb-4 d-flex flex-column justify-content-center align-items-center">
+        {{ form_errors(form.shop_name) }}
+        {{ form_widget(form.shop_name) }}
+    </div>
+    <button class="form-button">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

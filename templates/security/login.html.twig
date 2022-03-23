@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="login">
-        <form method="post">
+        <!--<form method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
@@ -40,7 +40,43 @@
                 Connexion
             </button>
         </div>
-    </form>
+    </form>-->
+        <div class="left_column">
+            <img src="{{ asset('build/images/logo.png') }}" alt="" width="20%">
+            <form method="post">
+                <h1 class="h3 mb-5 text-center">Heureux de vous revoir !</h1>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <label for="inputEmail">E-mail</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form_login_input" autocomplete="email" required autofocus>
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form_login_input" autocomplete="current-password" required>
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+                #}
+
+                <button class="button-submit" type="submit">
+                    Se connecter
+                </button>
+            </form>
+            <p class="footer-text">Pas de compte ? <a href="">S'inscrire</a></p>
+        </div>
+        <div class="right_column">
+
+        </div>
     </div>
 
 

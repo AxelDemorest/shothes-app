@@ -3,7 +3,52 @@
 {% block title %}Hello AccountController!{% endblock %}
 
 {% block body %}
+
     <div class="account">
+        <div class="list-buttons-actions">
+            <div class="p-4 w-100 d-flex flex-row justify-content-center">
+                {% if user.shop %}
+                    <a href="{{ path('app_shop_new') }}" class="action-button">Éditer votre boutique</a>
+                {% else %}
+                    <a href="{{ path('app_shop_new') }}" class="action-button">Créer votre boutique</a>
+                {% endif %}
+                <a href="" class="action-button">Ajouter un produit</a>
+                <a href="" class="action-button">Modifier votre profil</a>
+            </div>
+        </div>
+        <div class="account-avatar">
+            <div class="header-container"></div>
+            <div class="p-4">
+                <img class="avatar-img" src="{{ asset('build/images/avatar.jpeg') }}" alt="" width="50%">
+                <p class="account-name">{{ user.pseudo }}</p>
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+        <div class="account-information">
+            <div class="header-container"></div>
+            <div class="p-4">
+                <h4 class="title-information">Informations du compte</h4>
+            </div>
+        </div>
+        <div class="list-account-products">
+            <div class="header-container"></div>
+            <div class="p-4">
+                <h4 class="title-list_products">Liste de vos produits</h4>
+                <div class="list-products">
+                    {% for product in user.products %}
+                        <div class="single-product mt-3">
+                            <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                            <p class="name-product">{{ product.productTitle }}</p>
+                            <p class="price-product">{{ product.productPrice }}$</p>
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="account">
         {% for message in app.flashes('success') %}
             <div class="alert alert-success" role="alert">
                 {{ message }}
@@ -39,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button>Créer ma boutique</button>
+                        <a href="{{ path('app_shop_new') }}"><button>Créer ma boutique</button></a>
                         <div class="card-body p-4 text-black">
                             <div class="mb-5">
                                 <p class="lead fw-normal mb-1">Description</p>
@@ -107,5 +152,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 {% endblock %}
