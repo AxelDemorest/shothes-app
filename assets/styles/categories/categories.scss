@@ -1,0 +1,50 @@
+.categories {
+
+  .doubleCategories {
+    background-color: #f5f5f5 !important;
+  }
+
+  .doubleCategories {
+    display: flex  !important;
+    flex-wrap: wrap !important;
+  }
+
+  .coterGauche {
+    background-image: url("https://i.pinimg.com/originals/f9/b9/22/f9b922b21ba717519058e36e0a4486f1.gif") ;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 50% !important;
+    background-color: #f5f5f5;
+    margin-top: 10% !important;
+
+  }
+
+
+
+
+  .coterDroite {
+    background-color: #f5f5f5 !important;
+    width: 50% !important;
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+  }
+
+
+  .coterDroite p {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+  }
+
+  .card {
+    display: flex !important;
+    width: 70% !important;
+
+    margin-left: 10% !important;
+
+  }
+
+
+}
