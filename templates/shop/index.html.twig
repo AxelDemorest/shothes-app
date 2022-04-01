@@ -20,10 +20,6 @@
                 <td>{{ shop.id }}</td>
                 <td>{{ shop.shopName }}</td>
                 <td>{{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_shop_show', {'id': shop.id}) }}">show</a>
-                    <a href="{{ path('app_shop_edit', {'id': shop.id}) }}">edit</a>
-                </td>
             </tr>
         {% else %}
             <tr>
