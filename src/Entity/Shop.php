@@ -27,6 +27,12 @@ class Shop
     #[ORM\OneToMany(mappedBy: 'product_shop', targetEntity: Product::class)]
     private $shop_products;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $shop_icon;
+
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $shop_description;
+
     public function __construct()
     {
         $this->shop_created_at = new \DateTimeImmutable();
@@ -100,6 +106,35 @@ class Shop
                 $shopProduct->setProductShop(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getShopIcon(): ?string
+    {
+        return $this->shop_icon;
+    }
+
+    public function setShopIcon(?string $shop_icon): self
+    {
+        $this->shop_icon = $shop_icon;
+
+        return $this;
+    }
+
+    public function getShopIconPath(): string
+    {
+        return 'uploads/shop_image/'.$this->getShopIcon();
+    }
+
+    public function getShopDescription(): ?string
+    {
+        return $this->shop_description;
+    }
+
+    public function setShopDescription(?string $shop_description): self
+    {
+        $this->shop_description = $shop_description;
 
         return $this;
     }

@@ -3,31 +3,31 @@
 {% block title %}Shop index{% endblock %}
 
 {% block body %}
-    <h1>Shop index</h1>
+    <div class="list-shop">
+        <div class="header">
+            <h2 class="header-title">Les boutiques</h2>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Shop_name</th>
-                <th>Shop_created_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for shop in shops %}
-            <tr>
-                <td>{{ shop.id }}</td>
-                <td>{{ shop.shopName }}</td>
-                <td>{{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="list-items">
+            {% for shop in shops %}
+            <div class="single-item">
+                <a class="w-100 d-flex flex-row" href="{{ path('app_shop_show', {'id': shop.id}) }}">
+                    <div class="shop-icon w-25">
+                        <img src="{{ asset(shop.shopIconPath) }}" alt="" width="60%">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-between details">
+                        <h2 class="mb-4">{{ shop.shopName }}</h2>
+                        <p class="mb-5 pb-3">{{ shop.shopDescription }}</p>
+                        <p class="mb-0 owner">{{ shop.shopOwner.pseudo }} • {{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</p>
+                    </div>
+                    <div class="w-25">
 
-    <a href="{{ path('app_shop_new') }}">Create new</a>
+                    </div>
+                </a>
+            </div>
+            {% else %}
+                <p>Aucune boutique</p>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

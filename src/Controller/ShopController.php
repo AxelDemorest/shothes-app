@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Form\ShopType;
 use App\Repository\ShopRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,6 +34,22 @@ class ShopController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['shop_icon']->getData();
+
+            if ($uploadedFile) {
+                $destination = $this->getParameter('kernel.project_dir') . '/public/uploads/shop_image';
+
+                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
+
+                $uploadedFile->move(
+                    $destination,
+                    $newFilename
+                );
+
+                $shop->setShopIcon($newFilename);
+            }
 
             $shop->setShopOwner($user);
 
@@ -54,8 +71,8 @@ class ShopController extends AbstractController
     #[Route('/{id}', name: 'app_shop_show', methods: ['GET'])]
     public function show(Shop $shop): Response
     {
-        return $this->render('shop/product.html.twig', [
-            'shop' => $shop,
+        return $this->render('catalog/index.html.twig', [
+            'products' => $shop->getShopProducts(),
         ]);
     }
 }
