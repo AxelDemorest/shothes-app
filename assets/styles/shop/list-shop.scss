@@ -1,0 +1,45 @@
+.list-shop {
+  .header {
+    background: center/cover url('../../images/header/banner_4.jpg');
+    height: 200px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 70px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .single-item {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 40px auto 0 auto;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    transition: transform .4s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .shop-icon img {
+    border-radius: 12px;
+    margin: 30px;
+  }
+
+  .details {
+    font-family: 'Montserrat', sans-serif;
+    padding: 30px 0;
+  }
+}
