@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+
+    <div class="account">
+        <div class="list-buttons-actions">
+            <div class="p-4 w-100 d-flex flex-row justify-content-center">
+
+                <a href=" {{ path('app_account') }} " class="action-button">Retour Profil</a>
+            </div>
+        </div>
+        <div class="account-avatar">
+            <div class="header-container"></div>
+            <div class="p-4">
+                <img class="avatar-img" src="{{ asset('build/images/avatar.jpeg') }}" alt="" width="50%">
+                <p class="account-name">{{ user.pseudo }}</p>
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+        <div class="account-information">
+            <div class="header-container"></div>
+            <div class="p-4">
+                <h4 class="title-information">Modification compte</h4>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

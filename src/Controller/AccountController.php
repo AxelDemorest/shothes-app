@@ -18,4 +18,18 @@ class AccountController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    #[Route('account/edit', name: 'app_edit_account')]
+    public function editAccount(): Response
+    {
+        $user = $this->getUser();
+
+        return $this->render('account/edit-account.html.twig', [
+            'controller_name' => 'EditAccountController',
+            'user' => $user,
+        ]);
+    }
+
+
+
 }
