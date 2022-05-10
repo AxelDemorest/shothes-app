@@ -43,6 +43,7 @@
                     </ul>
                 </div>
                 <div class="list_buttons_head">
+                        <a href="{{ path('app_search') }}"><button>Rechercher</button></a>
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                         <a href="{{ path('app_account') }}"><button>Profil</button></a>
                         <a href="{{ path('app_logout') }}"><button>Déconnexion</button></a>
