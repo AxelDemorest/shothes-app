@@ -71,7 +71,7 @@ class ShopController extends AbstractController
     #[Route('/{id}', name: 'app_shop_show', methods: ['GET'])]
     public function show(Shop $shop): Response
     {
-        return $this->render('shop/show.html.twig', [
+        return $this->render('shop/show2.html.twig', [
             'products' => $shop->getShopProducts(),
         ]);
     }
