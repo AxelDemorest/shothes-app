@@ -1,6 +1,16 @@
 {{ form_start(form, {'attr': {'class': 'w-100'}}) }}
     <div class="mt-2">
         {{ form_widget(form) }}
+        <div class="d-flex flex-row my-2">
+            <div class="d-flex flex-column align-items-center">
+                <img src="{{ asset('build/images/layout1.png') }}" alt="" width="25%">
+                <p>Mise en page 1</p>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <img src="{{ asset('build/images/layout2.png') }}" alt="" width="25%">
+                <p>Mise en page 2</p>
+            </div>
+        </div>
     </div>
 <button class="action-button">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

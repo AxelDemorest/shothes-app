@@ -33,6 +33,9 @@ class Shop
     #[ORM\Column(type: 'text', nullable: true)]
     private $shop_description;
 
+    #[ORM\Column(type: 'integer')]
+    private $shop_layout;
+
     public function __construct()
     {
         $this->shop_created_at = new \DateTimeImmutable();
@@ -135,6 +138,18 @@ class Shop
     public function setShopDescription(?string $shop_description): self
     {
         $this->shop_description = $shop_description;
+
+        return $this;
+    }
+
+    public function getShopLayout(): ?int
+    {
+        return $this->shop_layout;
+    }
+
+    public function setShopLayout(int $shop_layout): self
+    {
+        $this->shop_layout = $shop_layout;
 
         return $this;
     }

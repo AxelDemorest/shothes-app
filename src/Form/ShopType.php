@@ -4,7 +4,9 @@ namespace App\Form;
 
 use App\Entity\Shop;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -32,6 +34,17 @@ class ShopType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'class' => 'input-custom mt-2',
+                ],
+            ])
+            ->add('shop_layout', ChoiceType::class, [
+                'label' => 'Choisissez la mise page de la boutique',
+                'mapped' => false,
+                'attr' => [
+                    'class' => 'input-custom mt-2',
+                ],
+                'choices' => [
+                    'Mise en page 1' => 1,
+                    'Mise en page 2' => 2,
                 ],
             ])
         ;
