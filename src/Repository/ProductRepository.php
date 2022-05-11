@@ -2,10 +2,13 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -43,6 +46,33 @@ class ProductRepository extends ServiceEntityRepository
         if ($flush) {
             $this->_em->flush();
         }
+    }
+
+    /**
+     * Récupère les produits en lien avec une recherche
+     * @param SearchData $search
+     * @return Product[]
+     */
+    public function findSearch(SearchData $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.product_category', 'c');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere('p.product_title LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        if (!empty($search->categories)) {
+            $query = $query
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
+
+        return $query->getQuery()->getResult();
     }
 
     // /**
