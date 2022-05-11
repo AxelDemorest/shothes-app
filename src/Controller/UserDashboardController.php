@@ -9,6 +9,7 @@ use App\Form\ProductType;
 use App\Form\ShopType;
 use App\Repository\ProductRepository;
 use App\Repository\ShopRepository;
+use PHPUnit\TextUI\XmlConfiguration\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -114,6 +115,7 @@ class UserDashboardController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $shop->setShopLayout($form->get('shop_layout')->getData());
             $shopRepository->add($shop);
             return $this->redirectToRoute('app_shop_index', [], Response::HTTP_SEE_OTHER);
         }

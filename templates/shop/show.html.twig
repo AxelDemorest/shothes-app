@@ -5,42 +5,31 @@
 {% block body %}
 
     <div class="shop-show">
-
         <div class="list-items">
-                <div class="single-item">
-                    <a class="w-100 d-flex flex-row" >
-                        <div class="shop-icon w-25">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" alt="" width="60%">
-                        </div>
-                        <div class="w-50 d-flex flex-column justify-content-between details">
-                            <h2 class="mb-4"> Nom de la Boutique </h2>
-                            <p class="mb-5 pb-3"> nom prènom </p>
-                            <p class="mb-0 owner"> description </p>
-                        </div>
-                    </a>
+            <div class="single-item">
+                <a class="w-100 d-flex flex-row">
+                    <div class="shop-icon w-25">
+                        <img src="{{ asset(shop.shopIconPath) }}" alt="" width="60%">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-between details">
+                        <h2 class="mb-4">{{ shop.shopName }}</h2>
+                        <p class="mb-5 pb-3">{{ shop.shopDescription }}</p>
+                        <p class="mb-0 owner">{{ shop.shopOwner.pseudo }} • {{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="list-products">
+            {% for product in products %}
+                <div class="single-product">
+                    <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                    <p class="name-product">{{ product.productTitle }}</p>
+                    <p class="price-product">{{ product.productPrice }}$</p>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
                 </div>
+            {% endfor %}
         </div>
-
-        <div class="listProduct">
-            <div class="singleProduct">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" >
-            </div>
-            <div class="singleProduct">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" >
-            </div>
-            <div class="singleProduct">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" >
-            </div>
-            <div class="singleProduct">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" >
-            </div>
-            <div class="singleProduct">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsEAy9A03x0kvKJTPcb3TT4lqPpHrl5WLtsSSekz2JW9RJjy-Ksf3huZVIpDdp2hvc-k&usqp=CAU" >
-            </div>
-        </div>
-
-
-
     </div>
 
 {% endblock %}
