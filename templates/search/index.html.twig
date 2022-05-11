@@ -3,36 +3,35 @@
 {% block title %}Hello SearchController!{% endblock %}
 
 {% block body %}
-    
     <div class="search">
-
-    {{ form_start(form, {attr: {class: 'filter js-filter-form'}}) }}
-
-    <div class="spinner-border js-loading" role="status" aria-hidden="true" style="display: none">
-        <span class="sr-only">Loading...</span>
-    </div>
-
-
-    <div class="inputSearch">
-        {{ form_row(form.q) }}                   <!-- barre de recherche  -->
-    </div>
-
-    <h4>Catégories</h4>
-
-
-    <button type="submit" class="btn btn-primary w-100">Filtrer</button>
-
-    {{ form_end(form) }}
-
-    {% for product in products %}
-        <div class="single-product">
-            <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
-            <p class="name-product">{{ product.productTitle }}</p>
-            <p class="price-product">{{ product.productPrice }}$</p>
-            <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+        <div class="search-container d-flex flex-column align-items-center">
+            <div class="w-50">
+                {{ form_start(form) }}
+                <div class="inputSearch">
+                    {{ form_row(form.q) }}
+                </div>
+                <div class="advanced-search">
+                    <h4 class="advanced-search-title">Recherches avancées</h4>
+                    <hr>
+                    <h5 class="advanced-search-title mt-4">Catégories :</h5>
+                    <div>
+                        {{ form_row(form.categories) }}
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Rechercher</button>
+                {{ form_end(form) }}
+            </div>
         </div>
-
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,64L26.7,74.7C53.3,85,107,107,160,128C213.3,149,267,171,320,181.3C373.3,192,427,192,480,165.3C533.3,139,587,85,640,96C693.3,107,747,181,800,224C853.3,267,907,277,960,250.7C1013.3,224,1067,160,1120,149.3C1173.3,139,1227,181,1280,186.7C1333.3,192,1387,160,1413,144L1440,128L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+        <div class="list-products">
+            {% for product in products %}
+                <div class="single-product">
+                    <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                    <p class="name-product">{{ product.productTitle }}</p>
+                    <p class="price-product">{{ product.productPrice }}$</p>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+                </div>
+            {% endfor %}
         </div>
-
-    {% endfor %}
+    </div>
 {% endblock %}
