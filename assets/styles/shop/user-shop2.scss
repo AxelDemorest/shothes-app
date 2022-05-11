@@ -6,7 +6,7 @@
   }
 
   .left-side {
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -17,7 +17,8 @@
   }
 
   .single-item {
-    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
     margin-top: 50px;
     border: 1px solid rgba(34, 34, 34, 0.15);
     border-radius: 12px;

@@ -68,7 +68,7 @@ class UserDashboardController extends AbstractController
             $product->setProductAuthor($user);
             $product->setProductShop($user->getShop());
             $productRepository->add($product);
-            return $this->redirectToRoute('app_user_dashboard', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_user_dashboard_product_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user_dashboard/product/new.html.twig', [

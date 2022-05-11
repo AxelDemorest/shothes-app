@@ -2,6 +2,8 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
+use App\Entity\Product;
 use App\Entity\Shop;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
@@ -43,6 +45,24 @@ class ShopRepository extends ServiceEntityRepository
         if ($flush) {
             $this->_em->flush();
         }
+    }
+
+    /**
+     * Récupère les produits en lien avec une recherche
+     * @param SearchData $search
+     * @return Shop[]
+     */
+    public function findSearchShop(SearchData $search): array
+    {
+        $query = $this->createQueryBuilder('s');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere('s.shop_name LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 
     // /**

@@ -10,7 +10,7 @@
 
         <div class="list-items">
             {% for shop in shops %}
-            <div class="single-item">
+            <div class="single-item mb-5">
                 <a class="w-100 d-flex flex-row" href="{{ path('app_shop_show', {'id': shop.id}) }}">
                     <div class="shop-icon w-25">
                         <img src="{{ asset(shop.shopIconPath) }}" alt="" width="60%">
@@ -19,9 +19,6 @@
                         <h2 class="mb-4">{{ shop.shopName }}</h2>
                         <p class="mb-5 pb-3">{{ shop.shopDescription }}</p>
                         <p class="mb-0 owner">{{ shop.shopOwner.pseudo }} • {{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</p>
-                    </div>
-                    <div class="w-25">
-
                     </div>
                 </a>
             </div>

@@ -36,6 +36,7 @@ class ShopController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['shop_icon']->getData();
+            $shop->setShopLayout($form->get('shop_layout')->getData());
 
             if ($uploadedFile) {
                 $destination = $this->getParameter('kernel.project_dir') . '/public/uploads/shop_image';

@@ -7,9 +7,9 @@
     <div class="shop-show2">
         <div class="shop2">
             <div class="left-side">
-                <div class="list-products">
+                <div class="list-products d-flex justify-content-center">
                     {% for product in products %}
-                        <div class="single-product me-5">
+                        <div class="single-product">
                             <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
                             <p class="name-product">{{ product.productTitle }}</p>
                             <p class="price-product">{{ product.productPrice }}$</p>

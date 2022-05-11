@@ -11,7 +11,7 @@
                     {{ form_row(form.q) }}
                 </div>
                 <div class="advanced-search">
-                    <h4 class="advanced-search-title">Recherches avancées</h4>
+                    <h4 class="advanced-search-title">Recherches avancées des produits</h4>
                     <hr>
                     <h5 class="advanced-search-title mt-4">Catégories :</h5>
                     <div>
@@ -23,15 +23,39 @@
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,64L26.7,74.7C53.3,85,107,107,160,128C213.3,149,267,171,320,181.3C373.3,192,427,192,480,165.3C533.3,139,587,85,640,96C693.3,107,747,181,800,224C853.3,267,907,277,960,250.7C1013.3,224,1067,160,1120,149.3C1173.3,139,1227,181,1280,186.7C1333.3,192,1387,160,1413,144L1440,128L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
-        <div class="list-products">
-            {% for product in products %}
-                <div class="single-product">
-                    <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
-                    <p class="name-product">{{ product.productTitle }}</p>
-                    <p class="price-product">{{ product.productPrice }}$</p>
-                    <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+        <div class="d-flex flex-row">
+            <div class="left-column d-flex flex-column align-items-center">
+                <h4 class="mb-5">Recherche des produits</h4>
+                <div class="list-products">
+                    {% for product in products %}
+                        <div class="single-product">
+                            <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                            <p class="name-product">{{ product.productTitle }}</p>
+                            <p class="price-product">{{ product.productPrice }}$</p>
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
+            <div class="right-column d-flex flex-column align-items-center">
+                <h4 class="mb-5">Recherche des boutiques</h4>
+                <div class="list-items">
+                    {% for shop in shops %}
+                        <div class="single-item mb-5">
+                            <a class="w-100 d-flex flex-row" href="{{ path('app_shop_show', {'id': shop.id}) }}">
+                                <div class="shop-icon w-25">
+                                    <img src="{{ asset(shop.shopIconPath) }}" alt="" width="60%">
+                                </div>
+                                <div class="w-50 d-flex flex-column justify-content-between details">
+                                    <h4 class="my-4">{{ shop.shopName }}</h4>
+                                    <p class="mb-5 pb-2">{{ shop.shopDescription }}</p>
+                                    <p class="mb-3 owner">{{ shop.shopOwner.pseudo }} • {{ shop.shopCreatedAt ? shop.shopCreatedAt|date('Y-m-d H:i:s') : '' }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

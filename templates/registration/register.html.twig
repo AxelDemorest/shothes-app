@@ -4,32 +4,26 @@
 
 {% block body %}
     <div class="registration">
+        <div class="left-column">
+            <img src="{{ asset('build/images/logo.png') }}" alt="" width="20%">
+            {{ form_start (registrationForm) }}
+            <h1 class="h3 mb-5 text-center">Complétez ce formulaire !</h1>
+            {{ form_label(registrationForm.pseudo) }}
+            {{ form_errors(registrationForm.pseudo) }}
+            {{ form_widget(registrationForm.pseudo) }}
 
-        <div class="login">
-            <form method="post">
-                <div class="formulaireConnexion" >
+            {{ form_label(registrationForm.email) }}
+            {{ form_errors(registrationForm.email) }}
+            {{ form_widget(registrationForm.email) }}
 
-                    <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+            {{ form_label(registrationForm.plainPassword) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+            {{ form_widget(registrationForm.plainPassword) }}
 
-        {{ form_start (registrationForm) }}
-        {{ form_label(registrationForm.pseudo) }}<br/>
-        {{ form_errors(registrationForm.pseudo) }}
-        {{ form_widget(registrationForm.pseudo) }}
-
-        {{ form_label(registrationForm.email) }}<br/>
-        {{ form_errors(registrationForm.email) }}
-        {{ form_widget(registrationForm.email) }}
-
-        {{ form_label(registrationForm.plainPassword) }}<br/>
-        {{ form_errors(registrationForm.plainPassword) }}
-        {{ form_widget(registrationForm.plainPassword) }}
-
-        <button type="submit" class="btn">Enregistrer</button>
-        {{ form_end(registrationForm) }}
-
-                </div>
-            </form>
+            <button type="submit" class="button-submit">Enregistrer</button>
+            {{ form_end(registrationForm) }}
+            <p class="footer-text">Déjà un compte ? <a href="{{ path('app_login') }}">Se connecter</a></p>
         </div>
-
+        <div class="right-column"></div>
     </div>
 {% endblock %}
