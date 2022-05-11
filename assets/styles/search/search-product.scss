@@ -1,7 +1,77 @@
-.search{
+.search {
+  .search-container {
+    background-color: #273036;
+    width: 100%;
+    padding-top: 100px;
+  }
 
+  .advanced-search {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #EDEDED;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
 
+  .submit-button {
+    background-color: #41494E;
+    color: #EDEDED;
+    padding: 5px 30px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+   }
 
+  .submit-button:hover {
+    background-color: #31383C;
+  }
 
+  .list-products {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 
+  .single-product {
+    margin: 0 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: rgb(85, 85, 85);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .image-product {
+    height: 325px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .name-product {
+    padding-top: 10px;
+  }
+
+  .read-more-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 5px 15px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 5px;
+    border: 2px solid #000000;
+    transition: background-color .2s linear, color .2s linear;
+  }
+
+  .read-more-button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+  }
 }

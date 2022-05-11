@@ -19,7 +19,8 @@ class SearchType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Recherche'
+                    'placeholder' => 'Recherche',
+                    'class' => 'input-custom',
                 ]
             ])
             ->add('categories', EntityType::class, [
@@ -27,7 +28,10 @@ class SearchType extends AbstractType
                 'required' => false,
                 'class' => Category::class,
                 'expanded' => true,
-                'multiple' => true
+                'multiple' => true,
+                'choice_attr' => function() {
+                    return ['class' => 'mx-2 my-2'];
+                },
             ])
         ;
     }
