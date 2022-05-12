@@ -32,7 +32,7 @@
                 <h2>{{ product.productTitle }}</h2>
                 <p class="product_category">{{ product.productCategory.categoryName }}</p>
                 <hr>
-                <button class="buy_button">Commander</button>
+                <a href="{{ path('app_checkout', {'id': product.id }) }}"><button class="buy_button">Commander</button></a>
                 <div class="accordion_container">
                     <button class="accordion">Description</button>
                     <div class="panel">

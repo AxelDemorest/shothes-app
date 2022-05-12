@@ -9,6 +9,11 @@
             <div class="line_separator"></div>
             <button class="button_header">Notre boutique</button>
         </div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="popular_categories">
             <h2>Les catégories populaires</h2>
             <div class="list_popular_categories">
