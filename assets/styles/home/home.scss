@@ -74,6 +74,9 @@
   .single_category img {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .shop_container {

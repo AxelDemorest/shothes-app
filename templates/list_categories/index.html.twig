@@ -6,28 +6,16 @@
 
     <div class="categories">
 
-        <h1> Catégories </h1>
+        <h1>Catégories</h1>
         <div class="cardCategories">
-            <div class="singleCard">
-                <img src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
-                <p>Chaussures</p>
-            </div>
-
-            <div class="singleCard">
-                <img src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
-                <p>Chaussures</p>
-            </div>
-
-            <div class="singleCard">
-                <img src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
-                <p>Chaussures</p>
-            </div>
-
-            <div class="singleCard">
-                <img src="{{ asset('build/images/dunk_low.jpeg') }}" alt="">
-                <p>Chaussures</p>
-            </div>
-
+            {% for category in categories %}
+                <div class="singleCard">
+                    <a href="{{ path('app_category_show', {'id': category.id }) }}">
+                        <img src="{{ asset(category.categoryIconPath) }}" alt="">
+                        <p>{{ category.categoryName }}</p>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 

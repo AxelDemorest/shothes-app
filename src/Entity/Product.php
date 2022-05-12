@@ -29,7 +29,7 @@ class Product
     private $product_shop;
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'category_products')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
     private $product_category;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'products')]

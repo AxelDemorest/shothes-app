@@ -1,9 +1,8 @@
 .categories {
 
   .cardCategories {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   h1 {
@@ -21,7 +20,13 @@
     width: 19%;
     margin-left: 3% !important;
     margin-right: 3% !important;
+    margin-bottom: 50px;
 
+    img {
+      height: 350px;
+      width: 270px;
+      object-fit: cover;
+    }
   }
 
   p{

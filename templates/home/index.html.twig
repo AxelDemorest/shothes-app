@@ -12,26 +12,14 @@
         <div class="popular_categories">
             <h2>Les catégories populaires</h2>
             <div class="list_popular_categories">
-                <div class="single_category">
-                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
-                    <h4>Catégorie 1</h4>
-                </div>
-                <div class="single_category">
-                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
-                    <h4>Catégorie 2</h4>
-                </div>
-                <div class="single_category">
-                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
-                    <h4>Catégorie 3</h4>
-                </div>
-                <div class="single_category">
-                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
-                    <h4>Catégorie 4</h4>
-                </div>
-                <div class="single_category">
-                    <img src="{{ asset('build/images/dev_image.png') }}" alt="">
-                    <h4>Catégorie 5</h4>
-                </div>
+                {% for category in categories %}
+                    <div class="single_category">
+                        <a href="{{ path('app_category_show', {'id': category.id }) }}">
+                            <img src="{{ asset(category.categoryIconPath) }}" alt="">
+                            <h4>{{ category.categoryName }}</h4>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="shop_container">

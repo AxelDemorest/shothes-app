@@ -24,6 +24,9 @@ class Category
     #[ORM\Column(type: 'datetime_immutable')]
     private $category_created_at;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $category_icon;
+
     public function __construct()
     {
         $this->category_products = new ArrayCollection();
@@ -91,5 +94,22 @@ class Category
 
     public function __toString() {
         return $this->category_name;
+    }
+
+    public function getCategoryIcon(): ?string
+    {
+        return $this->category_icon;
+    }
+
+    public function setCategoryIcon(?string $category_icon): self
+    {
+        $this->category_icon = $category_icon;
+
+        return $this;
+    }
+
+    public function getCategoryIconPath(): string
+    {
+        return 'uploads/category_image/'.$this->getCategoryIcon();
     }
 }

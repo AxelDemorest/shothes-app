@@ -75,6 +75,22 @@ class ProductRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    /**
+     * Récupère les produits en lien avec une recherche
+     * @return Product[]
+     */
+    public function findProductsByCategory($search): array
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.product_category', 'c')
+            ->andWhere('c.id IN (:categories)')
+            ->setParameter('categories', $search);
+
+        return $query->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */

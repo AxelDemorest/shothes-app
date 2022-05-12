@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block body %}
+    <div class="catalog">
+        <div class="catalog-header">
+            <h2 class="header-title">{{ category.categoryName }}</h2>
+        </div>
+        <div class="list-products">
+            {% for product in products %}
+                <div class="single-product">
+                    <img src="{{ asset(product.imagePath) }}" class="image-product" alt="">
+                    <p class="name-product">{{ product.productTitle }}</p>
+                    <p class="price-product">{{ product.productPrice }}$</p>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}"><button class="read-more-button">Voir plus</button></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
